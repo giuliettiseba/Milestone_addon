@@ -33,11 +33,12 @@ namespace VideoViewer
         double cr = 0.2125;
         double cg = 0.7154;
         double cb = 0.0721;
-        int thresholdValue = 100;
+        int thresholdValue = 45;
         int minWidth = 50;
         int minHeight = 50;
 
         Graphics gr;
+        Graphics gr2;
 
 
         public MainForm()
@@ -73,7 +74,7 @@ namespace VideoViewer
 
                 _imageViewerControl1 = ClientControl.Instance.GenerateImageViewerControl();
                 _imageViewerControl1.Dock = DockStyle.Fill;
-                _imageViewerControl1.ClickEvent += new EventHandler(_imageViewerControl1_ClickEvent);
+                _imageViewerControl1.ClickEvent += new EventHandler(ImageViewerControl1_ClickEvent);
                 panel1.Controls.Clear();
                 panel1.Controls.Add(_imageViewerControl1);
                 _imageViewerControl1.CameraFQID = _selectItem1.FQID;
@@ -97,6 +98,7 @@ namespace VideoViewer
 
 
                 gr = pictureBoxHisto.CreateGraphics();
+                gr2 = pictureBoxHistoV.CreateGraphics();
 
 
 
@@ -123,6 +125,8 @@ namespace VideoViewer
 
             }
         }
+        Bitmap backgroundImg = null;
+
 
         public void DoWork()
         {
@@ -131,29 +135,32 @@ namespace VideoViewer
             Bitmap grayScaleImg;
             Bitmap binaryImg;
             Bitmap openingFilterImg = null;
-            Bitmap blobsFilteringImg;
+            Bitmap blobsFilteringImg = null;
             Bitmap lastimg = null;
             Bitmap difImage = null;
             while (true)
             {
                 try
                 {
-                    if (openingFilterImg != null && difImage == null) lastimg = openingFilterImg;
+                    if (openingFilterImg != null) lastimg = openingFilterImg;
 
                     img = _imageViewerControl1.GetCurrentDisplayedImageAsBitmap();
                     grayScaleImg = ProcessImageGrayscale(img);
                     binaryImg = PocessImageBinary(grayScaleImg);
                     openingFilterImg = ProcessOpeningFilter(binaryImg);
-                    if (lastimg != null ) difImage = ProcessImageDiference(lastimg, openingFilterImg);
-                                       
-                    //blobsFilteringImg = ProcessImageBlobsFiltering(openingFilterImg);
-                    //DrawHistogram(blobsFilteringImg);
+                    if (backgroundImg != null)
+                    {
+                        difImage = ProcessImageDiference(backgroundImg, openingFilterImg);
+                        blobsFilteringImg = ProcessImageBlobsFiltering(difImage);
+                        DrawHistogram(blobsFilteringImg);
+                        DrawHistogramV(blobsFilteringImg);
+                    }
 
 
                     pictureBoxGrayScale.Image = grayScaleImg;
                     pictureBoxBinary.Image = binaryImg;
-                    //pictureBoxBlobsFilter.Image = blobsFilteringImg;
-                    pictureBoxOpeningFilter.Image = openingFilterImg;
+                   pictureBoxBlobsFilter.Image = blobsFilteringImg;
+                    this.PicuteOpeningFilterImg.Image = openingFilterImg;
 
                     pictureBoxDiference.Image = difImage;
 
@@ -255,7 +262,7 @@ namespace VideoViewer
                 ", PaintLocation:" + _imageViewerControl1.PaintLocation.X + "-" + _imageViewerControl1.PaintLocation.Y);
         }
 
-        void _imageViewerControl1_ClickEvent(object sender, EventArgs e)
+        void ImageViewerControl1_ClickEvent(object sender, EventArgs e)
         {
             if (_imageViewerControl2 != null)
                 _imageViewerControl2.Selected = false;
@@ -555,15 +562,10 @@ namespace VideoViewer
             Invert filter = new Invert();
             // apply the filter
             Bitmap inv = filter.Apply(img);
-       //     pictureBox5.Image = inv;
-            // collect statistics
-            //            VerticalIntensityStatistics vis = new VerticalIntensityStatistics(img);
-
+   
             HorizontalIntensityStatistics his = new HorizontalIntensityStatistics(inv);
-            // get gray histogram (for grayscale image)
             AForge.Math.Histogram histogram = his.Gray;
-            // output some histogram's information
-
+   
             int[] values = histogram.Values;
 
 
@@ -592,10 +594,56 @@ namespace VideoViewer
             }
         }
 
+        private void button12_Click(object sender, EventArgs e)
+        {
+            backgroundImg = (Bitmap) PicuteOpeningFilterImg.Image;
+        }
+
         //      gr.ResetTransform();
         //      gr.DrawRectangle(Pens.Black, 0, 0, width - 1, height - 1);
-    }
 
+
+        private void DrawHistogramV(Bitmap img)
+        {
+
+            Color back_color = Color.White;
+
+            Invert filter = new Invert();
+            // apply the filter
+            Bitmap inv = filter.Apply(img);
+
+            VerticalIntensityStatistics his = new VerticalIntensityStatistics(inv);
+            AForge.Math.Histogram histogram = his.Gray;
+
+            int[] values = histogram.Values;
+
+
+
+
+            Color[] Colors = new Color[] {
+        Color.Red, Color.LightGreen, Color.Blue,
+        Color.Pink, Color.Green, Color.LightBlue,
+        Color.Orange, Color.Yellow, Color.Purple
+    };
+
+
+
+            gr2.Clear(back_color);
+
+            // Draw the histogram.
+            using (Pen thin_pen = new Pen(Color.Black, 0))
+            {
+                for (int i = 0; i < values.Length; i++)
+                {
+
+                    float f2 = 420F;
+                    float fl = (float)values[i] / f2;
+                    gr2.DrawLine(thin_pen, 0, i, fl, i);
+                }
+            }
+        }
+
+  }
 
 
 }

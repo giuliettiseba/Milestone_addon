@@ -32,8 +32,8 @@
             this.groupBoxVideo = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBoxOpeningFilter = new System.Windows.Forms.PictureBox();
-            this.pictureBoxBlobsFilter = new System.Windows.Forms.PictureBox();
+            this.PicuteOpeningFilterImg = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBlobsFilter2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxBinary = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -45,9 +45,9 @@
             this.labelcr = new System.Windows.Forms.Label();
             this.pictureBoxGrayScale = new System.Windows.Forms.PictureBox();
             this.pictureBoxDiference = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxBlobsFilter = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxHistoV = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.labelMinMinHeight = new System.Windows.Forms.Label();
             this.trackBarMinHeight = new System.Windows.Forms.TrackBar();
@@ -57,6 +57,7 @@
             this.labelThresholdValue = new System.Windows.Forms.Label();
             this.trackBarThresholdValue = new System.Windows.Forms.TrackBar();
             this.pictureBoxHisto = new AForge.Controls.PictureBox();
+            this.button12 = new System.Windows.Forms.Button();
             this.checkBoxAdaptiveStreaming = new System.Windows.Forms.CheckBox();
             this.checkBoxHeader = new System.Windows.Forms.CheckBox();
             this.button10 = new System.Windows.Forms.Button();
@@ -84,8 +85,8 @@
             this.groupBoxVideo.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpeningFilter)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBlobsFilter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicuteOpeningFilterImg)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBlobsFilter2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBinary)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCG)).BeginInit();
@@ -93,9 +94,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrayScale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiference)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBlobsFilter)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHistoV)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarMinHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarMinWidth)).BeginInit();
@@ -107,6 +108,8 @@
             // 
             // groupBoxVideo
             // 
+            this.groupBoxVideo.AutoSize = true;
+            this.groupBoxVideo.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.groupBoxVideo.Controls.Add(this.panel2);
             this.groupBoxVideo.Controls.Add(this.checkBoxAdaptiveStreaming);
             this.groupBoxVideo.Controls.Add(this.checkBoxHeader);
@@ -116,10 +119,9 @@
             this.groupBoxVideo.Controls.Add(this.button1);
             this.groupBoxVideo.Controls.Add(this.checkBoxDigitalZoom);
             this.groupBoxVideo.Controls.Add(this.buttonSelect1);
-            this.groupBoxVideo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBoxVideo.Location = new System.Drawing.Point(0, 0);
+            this.groupBoxVideo.Location = new System.Drawing.Point(0, 3);
             this.groupBoxVideo.Name = "groupBoxVideo";
-            this.groupBoxVideo.Size = new System.Drawing.Size(894, 597);
+            this.groupBoxVideo.Size = new System.Drawing.Size(883, 575);
             this.groupBoxVideo.TabIndex = 12;
             this.groupBoxVideo.TabStop = false;
             this.groupBoxVideo.Text = "Video";
@@ -140,19 +142,20 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxOpeningFilter, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBoxBlobsFilter, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.PicuteOpeningFilterImg, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBoxBlobsFilter2, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBoxBinary, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.pictureBoxGrayScale, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBoxDiference, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox6, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBoxBlobsFilter, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox7, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox9, 4, 2);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBoxHistoV, 4, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.pictureBoxHisto, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.button12, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -164,25 +167,25 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(792, 415);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // pictureBoxOpeningFilter
+            // PicuteOpeningFilterImg
             // 
-            this.pictureBoxOpeningFilter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxOpeningFilter.Location = new System.Drawing.Point(635, 3);
-            this.pictureBoxOpeningFilter.Name = "pictureBoxOpeningFilter";
-            this.pictureBoxOpeningFilter.Size = new System.Drawing.Size(154, 121);
-            this.pictureBoxOpeningFilter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxOpeningFilter.TabIndex = 7;
-            this.pictureBoxOpeningFilter.TabStop = false;
+            this.PicuteOpeningFilterImg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PicuteOpeningFilterImg.Location = new System.Drawing.Point(635, 3);
+            this.PicuteOpeningFilterImg.Name = "PicuteOpeningFilterImg";
+            this.PicuteOpeningFilterImg.Size = new System.Drawing.Size(154, 121);
+            this.PicuteOpeningFilterImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.PicuteOpeningFilterImg.TabIndex = 7;
+            this.PicuteOpeningFilterImg.TabStop = false;
             // 
-            // pictureBoxBlobsFilter
+            // pictureBoxBlobsFilter2
             // 
-            this.pictureBoxBlobsFilter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBoxBlobsFilter.Location = new System.Drawing.Point(477, 3);
-            this.pictureBoxBlobsFilter.Name = "pictureBoxBlobsFilter";
-            this.pictureBoxBlobsFilter.Size = new System.Drawing.Size(152, 121);
-            this.pictureBoxBlobsFilter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxBlobsFilter.TabIndex = 6;
-            this.pictureBoxBlobsFilter.TabStop = false;
+            this.pictureBoxBlobsFilter2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxBlobsFilter2.Location = new System.Drawing.Point(477, 3);
+            this.pictureBoxBlobsFilter2.Name = "pictureBoxBlobsFilter2";
+            this.pictureBoxBlobsFilter2.Size = new System.Drawing.Size(152, 121);
+            this.pictureBoxBlobsFilter2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxBlobsFilter2.TabIndex = 6;
+            this.pictureBoxBlobsFilter2.TabStop = false;
             // 
             // pictureBoxBinary
             // 
@@ -199,6 +202,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoSize = true;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(152, 121);
@@ -308,15 +312,15 @@
             this.pictureBoxDiference.TabIndex = 8;
             this.pictureBoxDiference.TabStop = false;
             // 
-            // pictureBox6
+            // pictureBoxBlobsFilter
             // 
-            this.pictureBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox6.Location = new System.Drawing.Point(161, 230);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(152, 121);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 9;
-            this.pictureBox6.TabStop = false;
+            this.pictureBoxBlobsFilter.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxBlobsFilter.Location = new System.Drawing.Point(161, 230);
+            this.pictureBoxBlobsFilter.Name = "pictureBoxBlobsFilter";
+            this.pictureBoxBlobsFilter.Size = new System.Drawing.Size(152, 121);
+            this.pictureBoxBlobsFilter.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxBlobsFilter.TabIndex = 9;
+            this.pictureBoxBlobsFilter.TabStop = false;
             // 
             // pictureBox7
             // 
@@ -327,15 +331,15 @@
             this.pictureBox7.TabIndex = 10;
             this.pictureBox7.TabStop = false;
             // 
-            // pictureBox9
+            // pictureBoxHistoV
             // 
-            this.pictureBox9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox9.Location = new System.Drawing.Point(635, 230);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(154, 121);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox9.TabIndex = 12;
-            this.pictureBox9.TabStop = false;
+            this.pictureBoxHistoV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBoxHistoV.Location = new System.Drawing.Point(635, 230);
+            this.pictureBoxHistoV.Name = "pictureBoxHistoV";
+            this.pictureBoxHistoV.Size = new System.Drawing.Size(154, 121);
+            this.pictureBoxHistoV.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxHistoV.TabIndex = 12;
+            this.pictureBoxHistoV.TabStop = false;
             // 
             // tableLayoutPanel3
             // 
@@ -368,7 +372,7 @@
             // trackBarMinHeight
             // 
             this.trackBarMinHeight.Location = new System.Drawing.Point(3, 50);
-            this.trackBarMinHeight.Maximum = 300;
+            this.trackBarMinHeight.Maximum = 3000;
             this.trackBarMinHeight.Name = "trackBarMinHeight";
             this.trackBarMinHeight.Size = new System.Drawing.Size(100, 41);
             this.trackBarMinHeight.TabIndex = 1;
@@ -378,7 +382,7 @@
             // trackBarMinWidth
             // 
             this.trackBarMinWidth.Location = new System.Drawing.Point(3, 3);
-            this.trackBarMinWidth.Maximum = 300;
+            this.trackBarMinWidth.Maximum = 3000;
             this.trackBarMinWidth.Name = "trackBarMinWidth";
             this.trackBarMinWidth.Size = new System.Drawing.Size(100, 41);
             this.trackBarMinWidth.TabIndex = 0;
@@ -428,7 +432,7 @@
             this.trackBarThresholdValue.Name = "trackBarThresholdValue";
             this.trackBarThresholdValue.Size = new System.Drawing.Size(100, 45);
             this.trackBarThresholdValue.TabIndex = 16;
-            this.trackBarThresholdValue.Value = 100;
+            this.trackBarThresholdValue.Value = 63;
             this.trackBarThresholdValue.Scroll += new System.EventHandler(this.trackBarThresholdValue_Scroll);
             // 
             // pictureBoxHisto
@@ -441,11 +445,21 @@
             this.pictureBoxHisto.TabIndex = 18;
             this.pictureBoxHisto.TabStop = false;
             // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(3, 357);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 19;
+            this.button12.Text = "button12";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
             // checkBoxAdaptiveStreaming
             // 
             this.checkBoxAdaptiveStreaming.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.checkBoxAdaptiveStreaming.AutoSize = true;
-            this.checkBoxAdaptiveStreaming.Location = new System.Drawing.Point(405, 574);
+            this.checkBoxAdaptiveStreaming.Location = new System.Drawing.Point(398, 613);
             this.checkBoxAdaptiveStreaming.Name = "checkBoxAdaptiveStreaming";
             this.checkBoxAdaptiveStreaming.Size = new System.Drawing.Size(118, 17);
             this.checkBoxAdaptiveStreaming.TabIndex = 8;
@@ -459,7 +473,7 @@
             this.checkBoxHeader.AutoSize = true;
             this.checkBoxHeader.Checked = true;
             this.checkBoxHeader.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxHeader.Location = new System.Drawing.Point(405, 542);
+            this.checkBoxHeader.Location = new System.Drawing.Point(398, 581);
             this.checkBoxHeader.Name = "checkBoxHeader";
             this.checkBoxHeader.Size = new System.Drawing.Size(91, 17);
             this.checkBoxHeader.TabIndex = 7;
@@ -471,7 +485,7 @@
             this.button10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.Color.Green;
-            this.button10.Location = new System.Drawing.Point(735, 558);
+            this.button10.Location = new System.Drawing.Point(722, 597);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(33, 23);
             this.button10.TabIndex = 6;
@@ -484,7 +498,7 @@
             this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.Color.Green;
-            this.button9.Location = new System.Drawing.Point(152, 560);
+            this.button9.Location = new System.Drawing.Point(148, 525);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(33, 23);
             this.button9.TabIndex = 2;
@@ -497,7 +511,7 @@
             this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.Red;
-            this.button8.Location = new System.Drawing.Point(696, 558);
+            this.button8.Location = new System.Drawing.Point(683, 597);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(33, 23);
             this.button8.TabIndex = 5;
@@ -510,7 +524,7 @@
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Red;
-            this.button1.Location = new System.Drawing.Point(113, 560);
+            this.button1.Location = new System.Drawing.Point(70, 525);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(33, 23);
             this.button1.TabIndex = 1;
@@ -522,7 +536,7 @@
             // 
             this.checkBoxDigitalZoom.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.checkBoxDigitalZoom.AutoSize = true;
-            this.checkBoxDigitalZoom.Location = new System.Drawing.Point(405, 559);
+            this.checkBoxDigitalZoom.Location = new System.Drawing.Point(398, 598);
             this.checkBoxDigitalZoom.Name = "checkBoxDigitalZoom";
             this.checkBoxDigitalZoom.Size = new System.Drawing.Size(83, 17);
             this.checkBoxDigitalZoom.TabIndex = 3;
@@ -534,9 +548,9 @@
             // 
             this.buttonSelect1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSelect1.Location = new System.Drawing.Point(19, 519);
+            this.buttonSelect1.Location = new System.Drawing.Point(12, 496);
             this.buttonSelect1.Name = "buttonSelect1";
-            this.buttonSelect1.Size = new System.Drawing.Size(326, 23);
+            this.buttonSelect1.Size = new System.Drawing.Size(313, 23);
             this.buttonSelect1.TabIndex = 0;
             this.buttonSelect1.Text = "Select camera...";
             this.buttonSelect1.UseVisualStyleBackColor = true;
@@ -616,7 +630,7 @@
             this.groupBoxPlayback.Controls.Add(this.button6);
             this.groupBoxPlayback.Controls.Add(this.buttonForward);
             this.groupBoxPlayback.Controls.Add(this.buttonReverse);
-            this.groupBoxPlayback.Location = new System.Drawing.Point(12, 741);
+            this.groupBoxPlayback.Location = new System.Drawing.Point(12, 848);
             this.groupBoxPlayback.Name = "groupBoxPlayback";
             this.groupBoxPlayback.Size = new System.Drawing.Size(1062, 100);
             this.groupBoxPlayback.TabIndex = 19;
@@ -677,7 +691,7 @@
             // 
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.buttonOK.Location = new System.Drawing.Point(987, 854);
+            this.buttonOK.Location = new System.Drawing.Point(987, 961);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(87, 23);
             this.buttonOK.TabIndex = 20;
@@ -688,7 +702,7 @@
             // button11
             // 
             this.button11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button11.Location = new System.Drawing.Point(12, 854);
+            this.button11.Location = new System.Drawing.Point(12, 961);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(202, 23);
             this.button11.TabIndex = 21;
@@ -699,7 +713,7 @@
             // buttonLiftMask
             // 
             this.buttonLiftMask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonLiftMask.Location = new System.Drawing.Point(235, 854);
+            this.buttonLiftMask.Location = new System.Drawing.Point(235, 961);
             this.buttonLiftMask.Name = "buttonLiftMask";
             this.buttonLiftMask.Size = new System.Drawing.Size(95, 23);
             this.buttonLiftMask.TabIndex = 22;
@@ -712,6 +726,7 @@
             this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(894, 597);
             this.Controls.Add(this.buttonLiftMask);
             this.Controls.Add(this.button11);
@@ -726,8 +741,9 @@
             this.groupBoxVideo.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpeningFilter)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBlobsFilter)).EndInit();
+            this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicuteOpeningFilterImg)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBlobsFilter2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBinary)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
@@ -736,9 +752,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarCR)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrayScale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDiference)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxBlobsFilter)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHistoV)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarMinHeight)).EndInit();
@@ -750,6 +766,7 @@
             this.groupBoxPlayback.ResumeLayout(false);
             this.groupBoxPlayback.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 
@@ -782,8 +799,8 @@
         private System.Windows.Forms.CheckBox checkBoxAdaptiveStreaming;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.PictureBox pictureBoxOpeningFilter;
-        private System.Windows.Forms.PictureBox pictureBoxBlobsFilter;
+        private System.Windows.Forms.PictureBox PicuteOpeningFilterImg;
+        private System.Windows.Forms.PictureBox pictureBoxBlobsFilter2;
         private System.Windows.Forms.PictureBox pictureBoxBinary;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -792,9 +809,9 @@
         private System.Windows.Forms.TrackBar trackBarCR;
         private System.Windows.Forms.PictureBox pictureBoxGrayScale;
         private System.Windows.Forms.PictureBox pictureBoxDiference;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.PictureBox pictureBoxBlobsFilter;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pictureBoxHistoV;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TrackBar trackBarMinHeight;
         private System.Windows.Forms.TrackBar trackBarMinWidth;
@@ -807,6 +824,7 @@
         private System.Windows.Forms.Label labelMinMinHeight;
         private System.Windows.Forms.Label labelMinWidth;
         private AForge.Controls.PictureBox pictureBoxHisto;
+        private System.Windows.Forms.Button button12;
     }
 }
 
